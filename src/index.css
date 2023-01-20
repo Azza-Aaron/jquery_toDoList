@@ -1,0 +1,61 @@
+.overdue {
+    background-color: indianred;
+}
+
+.done {
+    background-color: lightgreen;
+}
+
+.task {
+    background-color: lightcyan;
+}
+
+.urgent {
+    background-color: orange;
+}
+
+.complianceIssue {
+    color: #ff3e00;
+    background-color: lightcyan;
+}
+
+.labelInputs {
+    font-family:  Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-indent: 15px;
+    margin-left:15px
+}
+
+.inputs {
+    font-family:  Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border: grey 3px inset;
+    margin-left: 10px
+}
+
+.emptyInput {
+    font-family:  Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border: red 3px inset;
+    margin-left: 10px
+}
+
+body {
+    background-color: #ffffff;
+}
+
+.headerB {
+    background-color: black;
+    color: white;
+}
+
+#export {
+    margin-left: 770px;
+}
+
+.headerA {
+
+}
