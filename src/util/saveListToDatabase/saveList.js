@@ -1,3 +1,4 @@
 function saveList() {
-  console.log("save list, does nothing yet");
+  localStorage.setItem("taskList", JSON.stringify(taskArray));
+  console.log("list Saved");
 }

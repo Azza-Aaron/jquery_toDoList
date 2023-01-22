@@ -1,5 +1,4 @@
 // create
-
 const downloadTagForCSV = document.createElement("a");
 
 function exportCSV() {

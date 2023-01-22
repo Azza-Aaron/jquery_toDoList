@@ -7,3 +7,9 @@ let taskArray = [];
 //     preserveClass: false,
 //     setClass: classes.SOMETHING
 // });
+
+function getSavedList() {
+  let storedList = localStorage.getItem("taskList");
+  taskArray = JSON.parse(storedList);
+  console.log(taskArray);
+}
