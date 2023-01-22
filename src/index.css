@@ -48,6 +48,8 @@ body {
 }
 
 .headerB {
+    margin-left: auto;
+    text-align: center;
     background-color: black;
     color: white;
 }
@@ -57,5 +59,15 @@ body {
 }
 
 .headerA {
+    text-align: center;
 
+}
+
+.modal {
+    margin-left: 60%;
+    text-align: center;
+    width: 400px;
+}
+#modal-body {
+    width: 200px;
 }

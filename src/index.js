@@ -12,7 +12,7 @@ const mainHeader = $(
 $("body").append([
   mainHeader,
   $(
-    "<table class='table' id='mainTable'><thead><tr id='headTr'></tr></thead></table>"
+    "<table class='table' id='mainTable'><thead><tr id='headTr' class='headerB'></tr></thead></table>"
   ),
 ]);
 
@@ -44,7 +44,3 @@ $("table").append([
     saveList();
   }),
 ]);
-
-//EDIT CLASS
-$(".headerA").css({ "text-align": "center" });
-$(".headerB").css({ "text-align": "center" });

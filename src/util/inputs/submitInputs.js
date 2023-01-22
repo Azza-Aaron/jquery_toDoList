@@ -7,9 +7,10 @@ function submitInput() {
       job: $("#job-inp").val(),
       description: $("#desc-inp").val(),
       date: $("#date-inp").val(),
-      preserveClass: "class",
-      setClass: "class",
+      preserveClass: false,
+      setClass: classes.TODO,
     });
+    $(".input-group").val("");
     renderElements();
     console.log("submitted");
   }
