@@ -1,10 +1,18 @@
 // create
 
-const exportTaskArrayFile = new Blob(formatTaskArrayToCSV(), { type: ".csv" });
-//const downloadUrl = URL.createObjectURL(exportTaskArrayFile);
+const downloadTagForCSV = document.createElement("a");
 
 function exportCSV() {
-  console.log("CSV SHOULD DOWNLOAD");
+  const list = formatTaskArrayToCSV();
+  const expCsvButton = document.getElementById("exptCsvBtn");
+  const exportTaskArrayFile = new Blob(list, {
+    type: "text/csv",
+  });
+  downloadTagForCSV.href = window.URL.createObjectURL(exportTaskArrayFile);
+  downloadTagForCSV.download = "download.csv";
+  expCsvButton.appendChild(downloadTagForCSV);
+  $(downloadTagForCSV)[0].click();
+  console.log("ran");
 }
 
 function formatTaskArrayToCSV() {
@@ -16,9 +24,7 @@ function formatTaskArrayToCSV() {
     const job = task.job.replaceAll(",", "");
     const desc = task.description.replaceAll(",", "");
     const date = task.date.replaceAll(",", "");
-    const presClass = task.preserveClass.job.replaceAll(",", "");
-    const setClass = task.setClass.replaceAll(",", "");
-    const taskFormat = `\n${job}, ${desc}, ${date}, ${presClass}, ${setClass}`;
+    const taskFormat = `\n${job}, ${desc}, ${date}, ${task.preserveClass}, ${task.setClass}`;
     comaSeperatedList.push(taskFormat);
   }
   return comaSeperatedList;

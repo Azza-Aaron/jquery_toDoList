@@ -29,10 +29,12 @@ $("table").append([
     .click(function () {
       createInputs();
     }),
+  // $(
+  //   "<form style='display: inline' action='URL.createObjectURL(exportTaskArrayFile)' method='get'> <button id='export-btn-2.o'>Expo to CSV</button></form>"
+  // ),
   $("<button/>")
     .text("Export to CSV")
-    .attr("href", `URL.createObjectURL(exportTaskArrayFile)`)
-    .attr("download", "task_list.csv")
+    .attr("id", "exptCsvBtn")
     .click(function () {
       exportCSV();
     }),
