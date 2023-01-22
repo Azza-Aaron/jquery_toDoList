@@ -16,10 +16,8 @@ function validInput() {
 
   console.log(job, desc, date);
   if (job && desc && date) {
-    console.log("full values");
     return true;
   } else {
-    console.log("missing fields");
     return false;
   }
 }

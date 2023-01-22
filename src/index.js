@@ -25,22 +25,21 @@ $("#headTr").append([
 $("table").append([
   $("<tbody></tbody>").attr("id", "body-for-trs"),
   $("<button/>")
-    .text("createInputs")
+    .text("Add Task")
     .click(function () {
       createInputs();
     }),
   $("<button/>")
-    .text("Export CSV")
+    .text("Export to CSV")
+    //.attr("href", ``)
+    //.attr("download", "task_list.csv")
     .click(function () {
       exportCSV();
     }),
   $("<button/>")
     .attr("id", "save")
-    .text("Save")
+    .text("Save List")
     .click(function () {
       saveList();
     }),
-  $("exportCSV").click(function () {
-    saveList();
-  }),
 ]);

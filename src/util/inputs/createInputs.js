@@ -1,5 +1,6 @@
 function createInputs() {
-  console.log("create inputs");
+  $(".input-group").remove();
+  $("#submit-el").remove();
   const inputs = [
     "<label id='job-l' class='input-group'>Job</label><input id='job-inp' class='input-group'>",
     "<label id='description-l' class='input-group'>Description</label>",
@@ -13,5 +14,4 @@ function createInputs() {
       }),
   ];
   $("body").append(inputs);
-  console.log("inputs made");
 }

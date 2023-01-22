@@ -1,20 +1,33 @@
 function renderElements() {
-  console.log("rendering elements");
   const body = document.getElementById("body-for-trs");
   body.replaceChildren();
+  renderDateClass();
 
   for (let i = 0; i < taskArray.length; i++) {
-    console.log(`job will past ${taskArray[i].job}`);
     const trForJob = document.createElement("tr");
+    const trClass = taskArray[i].setClass;
     trForJob.id = "tr" + i;
-    trForJob.classList.add(taskArray[i].setClass);
+    trForJob.classList.add(trClass);
+
+    $(trForJob).dblclick(() => {
+      if (!taskArray[i].preserveClass) {
+        taskArray[i].preserveClass = true;
+        taskArray[i].setClass = classes.DONE;
+        renderElements();
+        return;
+      }
+      if (trClass === classes.DONE) {
+        taskArray[i].preserveClass = false;
+        renderElements();
+      }
+    });
 
     const jobField = taskArray[i].job;
     const descriptionField = taskArray[i].description;
     const dateField = taskArray[i].date;
 
     $(body).append([trForJob]);
-    $(`#tr${i}`).append([
+    $(trForJob).append([
       $(`<td id='jobHeader${i}' >${jobField}</td>`),
       $(`<td id='descHeader${i}' >${descriptionField}</td>`),
       $(`<td id='dateHeader${i}' >${dateField}</td>`),
@@ -37,5 +50,4 @@ function renderElements() {
         }),
     ]);
   }
-  console.log("elements rendered");
 }
