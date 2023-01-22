@@ -31,8 +31,8 @@ $("table").append([
     }),
   $("<button/>")
     .text("Export to CSV")
-    //.attr("href", ``)
-    //.attr("download", "task_list.csv")
+    .attr("href", `URL.createObjectURL(exportTaskArrayFile)`)
+    .attr("download", "task_list.csv")
     .click(function () {
       exportCSV();
     }),

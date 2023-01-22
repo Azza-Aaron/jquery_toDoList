@@ -1,7 +1,7 @@
-//forButton
+// create
 
 const exportTaskArrayFile = new Blob(formatTaskArrayToCSV(), { type: ".csv" });
-const downloadUrl = URL.createObjectURL(exportTaskArrayFile);
+//const downloadUrl = URL.createObjectURL(exportTaskArrayFile);
 
 function exportCSV() {
   console.log("CSV SHOULD DOWNLOAD");
