@@ -1,17 +1,13 @@
 function createInputs() {
   $(".input-group").remove();
   $("#submit-el").remove();
+
   const inputs = [
     "<label id='job-l' class='input-group'>Job</label><input id='job-inp' class='input-group'>",
     "<label id='description-l' class='input-group'>Description</label>",
     "<input id='desc-inp' class='input-group'>",
-    "<label id='date-l' class='input-group'>DD/MM/YYYY</label><input id='date-inp' class='input-group'></input>",
-    $("<button/>")
-      .text("Submit")
-      .attr("id", "submit-el")
-      .click(function () {
-        submitInput();
-      }),
+    "<label id='date-l' class='input-group'>DD/MM/YYYY</label><input id='date-inp' class='input-group' />",
+    $("<button/>").text("Submit").attr("id", "submit-el").click(submitInput),
   ];
   $("body").append(inputs);
 }
