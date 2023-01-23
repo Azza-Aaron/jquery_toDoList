@@ -1,4 +1,5 @@
 function submitModal(i, myModal) {
+  $("*").removeClass("dimBody");
   const mJob = document.getElementById("modal-job");
   const mDesc = document.getElementById("modal-des");
   const mDate = document.getElementById("modal-date");

@@ -24,19 +24,34 @@ function main() {
   $("#headTr").append([
     $("<th id='jobHeader' scope='col'>Job</th>"),
     $("<th id='descHeader' scope='col'>Description</th>"),
-    $("<th id='dateHeader' scope='col'>Date</th>"),
+    $(`<th id='dateHeader' scope='col'>Date</th>`),
+    $(`<th id='buttonColum' scope='col'></th>`),
   ]);
 
   mainTable.append([
     $("<tbody></tbody>").attr("id", "body-for-trs"),
-    $("<button/>").text("Add Task").click(createInputs),
+    $("<button/>")
+      .text("Add Task")
+      .attr("class", "btn btn-primary")
+      .addClass("btnTopMargin")
+      .addClass("AESGroup")
+      .click(createInputs),
     // $(
     //   "<form style='display: inline' action='URL.createObjectURL(exportTaskArrayFile)' method='get'> <button id='export-btn-2.o'>Expo to CSV</button></form>"
     // ),
     $("<button/>")
       .text("Export to CSV")
       .attr("id", "exptCsvBtn")
+      .attr("class", "btn btn-secondary")
+      .addClass("btnTopMargin")
+      .addClass("AESGroup")
       .click(exportCSV),
-    $("<button/>").attr("id", "save").text("Save List").click(saveList),
+    $("<button/>")
+      .attr("id", "save")
+      .attr("class", "btn btn-success")
+      .addClass("btnTopMargin")
+      .addClass("AESGroup")
+      .text("Save List")
+      .click(saveList),
   ]);
 }

@@ -8,6 +8,7 @@ function renderElements() {
     const trClass = taskArray[i].setClass;
     trForJob.id = "tr" + i;
     trForJob.classList.add(trClass);
+    trForJob.classList.add("trOverallClass");
 
     $(trForJob).dblclick(() => {
       if (!taskArray[i].preserveClass) {
@@ -16,8 +17,15 @@ function renderElements() {
         renderElements();
         return;
       }
-      if (trClass === classes.DONE) {
+      if (trClass === classes.DONE && taskArray[i].preserveClass) {
         taskArray[i].preserveClass = false;
+        renderElements();
+      }
+      if (trClass === classes.TODO) {
+        taskArray[i].setClass = classes.DONE;
+        renderElements();
+      } else {
+        taskArray[i].setClass = classes.TODO;
         renderElements();
       }
     });
@@ -31,10 +39,14 @@ function renderElements() {
       $(`<td id='jobHeader${i}' >${jobField}</td>`),
       $(`<td id='descHeader${i}' >${descriptionField}</td>`),
       $(`<td id='dateHeader${i}' >${dateField}</td>`),
+      $(`<td id='editRemoveButtonsCol${i}' ></td>`),
     ]);
-    $("#dateHeader" + i).append([
+    $("#editRemoveButtonsCol" + i).append([
       $("<button/>")
         .attr("id", "editBtn" + 1)
+        .attr("class", "btn btn-info")
+        .addClass("lightBlue")
+        .addClass("editBtn")
         .text("Edit")
         .click(() => {
           $(".input-group").remove();
@@ -43,6 +55,9 @@ function renderElements() {
         }),
       $("<button/>")
         .attr("id", "removeBtn" + -1)
+        .attr("class", "btn btn-info")
+        .addClass("btnRightMargin")
+        .addClass("lightBlue")
         .text("Remove")
         .click(() => {
           taskArray.splice(i, 1);

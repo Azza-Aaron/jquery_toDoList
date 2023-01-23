@@ -45,9 +45,12 @@
 
 body {
     background-color: #ffffff;
+    text-align: center;
 }
 
 .headerB {
+    font-size: 22px;
+    font-family: "Times New Roman", Arial, sans-serif;
     margin-left: auto;
     text-align: center;
     background-color: black;
@@ -66,8 +69,63 @@ body {
 .modal {
     margin-left: 60%;
     text-align: center;
-    width: 400px;
+    width: 280px;
 }
 #modal-body {
     width: 200px;
+}
+
+.lightBlue {
+    background-color: #ADD8E6;
+    margin-left: 10px;
+}
+
+.AESGroup {
+    margin: auto;
+    margin-left: 5px;
+}
+
+.trOverallClass {
+    font-size: 22px;
+    font-family: "Times New Roman", Arial, sans-serif;
+}
+
+#ex1 {
+    position: fixed;
+    margin-top: 50px;
+    top: 0; right: 0;
+    height: auto;
+}
+
+.input-group {
+    margin-left: 500px;
+    text-align: center;
+    width: 500px;
+    font-size: 22px;
+    font-family: "Times New Roman", Arial, sans-serif;
+}
+
+.dimBody {
+    background-color: dimgrey;
+    opacity: .8;
+}
+
+.btnTopMargin {
+    margin-top: 10px;
+}
+.btnRightMargin {
+}
+.editBtn {
+}
+
+#job-l {
+    justify-content: center;
+}
+
+#description-l {
+    justify-content: center;
+}
+
+#date-l {
+    justify-content: center;
 }
