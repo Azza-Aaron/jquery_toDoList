@@ -23,6 +23,28 @@ async function formatInsertArray(req, client) {
   }
 }
 
+async function addingIfNoID(req, client) {
+  for (let i = 0; i < req.body.length; i++) {
+    const key = req.body[i];
+    if (key.id) {
+      if (key.id.startsWith("remove")) {
+        // todo REMOVE FROM DATABASE
+      }
+      continue;
+    } else {
+      const insertArray = [
+        key.job,
+        key.description,
+        key.date,
+        key.preserveClass,
+        key.setClass,
+        "DEFAULT",
+      ];
+      const preparedQuery = insertQuery(insertArray);
+      await client.query(preparedQuery);
+    }
+  }
+}
 // create /api routes for all CRUD operations
 const query = {
   name: "select-all-todo",
@@ -34,4 +56,5 @@ module.exports = {
   insertQuery,
   formatInsertArray,
   query,
+  addingIfNoID,
 };

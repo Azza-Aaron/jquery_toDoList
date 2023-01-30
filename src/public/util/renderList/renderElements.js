@@ -1,4 +1,6 @@
-function renderElements() {
+async function renderElements() {
+  await saveList();
+  await getListFromServer();
   const body = document.getElementById("body-for-trs");
   body.replaceChildren();
   renderDateClass();
@@ -59,9 +61,9 @@ function renderElements() {
         .addClass("btnRightMargin")
         .addClass("lightBlue")
         .text("Remove")
-        .click(() => {
-          taskArray.splice(i, 1);
-          renderElements();
+        .click(async () => {
+          taskArray[i].id = `remove ${taskArray[i].id}`;
+          await renderElements();
         }),
     ]);
   }

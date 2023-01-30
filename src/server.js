@@ -4,6 +4,7 @@ const {
   insertQuery,
   formatInsertArray,
   query,
+  addingIfNoID,
 } = require("./database/preparedQueries.js");
 
 const { client } = require("./database/database.js");
@@ -38,10 +39,14 @@ app.get("/api/todo", async (req, res) => {
 app.use(express.json());
 app.post("/api/todo", async (req, res, next) => {
   try {
-    //todo save to database
     console.log(req.body);
-    await client.query("DELETE FROM todo.public.todo_table");
-    await formatInsertArray(req, client);
+
+    await addingIfNoID(req, client);
+    const table = "todo.public.todo_table";
+    //await client.query("DELETE FROM todo.public.todo_table");
+    await client.query(`UPDATE ${table} SET`);
+
+    //await formatInsertArray(req, client);
     res.json(req.body);
   } catch (err) {
     console.log(err);

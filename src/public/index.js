@@ -1,14 +1,8 @@
 //FORMAT READY
-$(() => {
+$(async () => {
   console.log("ready!"); //make sure page is r.
   main();
-  getListFromServer(); //todo make this work
-  //console.log(serverData.serverResponse[0].job);
-  getSavedList();
-  // if (localStorage.getItem("taskList")) {
-  //   getSavedList();
-  //   renderElements();
-  // }
+  await renderElements();
 });
 
 function main() {
