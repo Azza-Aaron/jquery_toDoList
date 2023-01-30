@@ -59,6 +59,8 @@ function main() {
       .text("Load Saved File")
       .attr("id", "loadSaved")
       .attr("class", "btn btn-dark")
+      .addClass("AESGroup")
+      .addClass("btnTopMargin")
       .click(getListFromServer),
   ]);
 }
