@@ -2,11 +2,13 @@
 $(() => {
   console.log("ready!"); //make sure page is r.
   main();
-
-  if (localStorage.getItem("taskList")) {
-    getSavedList();
-    renderElements();
-  }
+  getListFromServer(); //todo make this work
+  //console.log(serverData.serverResponse[0].job);
+  getSavedList();
+  // if (localStorage.getItem("taskList")) {
+  //   getSavedList();
+  //   renderElements();
+  // }
 });
 
 function main() {
@@ -53,5 +55,10 @@ function main() {
       .addClass("AESGroup")
       .text("Save List")
       .click(saveList),
+    $("<button/>")
+      .text("Load Saved File")
+      .attr("id", "loadSaved")
+      .attr("class", "btn btn-dark")
+      .click(getListFromServer),
   ]);
 }
