@@ -2,9 +2,9 @@
   "name": "jqtodo",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/server.js",
   "scripts": {
-    "dev: run": "nodemon ./src/server.js"
+    "dev:run": "nodemon ./src/server.js"
   },
   "dependencies": {
     "prettier": "^2.8.3",
