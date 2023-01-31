@@ -37,7 +37,10 @@ app.get("/api/todo", async (req, res) => {
 });
 
 app.use(express.json());
-app.post("/api/todo", async (req, res, next) => {
+
+// POST is for creating a new resource
+// add endpoints for PATCH, DELETE to perform other operations
+app.post("/api/todo", async (req, res) => {
   try {
     console.log(req.body);
 
@@ -54,28 +57,6 @@ app.post("/api/todo", async (req, res, next) => {
     res.send({ err: "something went wrong" });
   }
 });
-
-// CRUD
-// - CREATE: create a new resource
-//// delete all current entries, and insert all new entries
-// - READ: read a resource
-//// create an /api GET endpoint that returns the list from the database
-
-//skip update/delete
-// - UPDATE: update a resource
-// - DELETE: delete a resource
-
-// https://www.postgresql.org/
-// https://www.npmjs.com/package/pg
-// https://www.postgresql.org/docs/15/index.html
-//https://www.postgresql.org/docs/current/sql-createrole.html
-// https://www.postgresqltutorial.com/postgresql-administration/postgresql-create-database/
-//https://www.postgresql.org/docs/15/sql-createtable.html
-// https://www.postgresql.org/docs/current/datatype.html
-//https://node-postgres.com/features/connecting#programmatic
-//https://node-postgres.com/features/queries#prepared-statements
-////https://tableplus.com/blog/2018/04/postgresql-how-to-grant-access-to-users.html
-//GRANT ALL PRIVILEGES ON DATABASE database_name TO username;
 
 const PORT = process.env.PORT || 3000;
 

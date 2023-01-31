@@ -23,6 +23,7 @@ async function formatInsertArray(req, client) {
   }
 }
 
+//several issues with this method, more details to come on github comment
 async function addingIfNoID(req, client) {
   for (let i = 0; i < req.body.length; i++) {
     const key = req.body[i];
